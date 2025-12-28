@@ -14,19 +14,19 @@
 -- | Best For     | Complex queries & relationships | Large-scale, fast, unstructured data                         |
 -- | Examples     | MySQL, PostgreSQL, Oracle       | MongoDB, Firebase, Cassandra                                 |
 
--- What is SQL?
+# What is SQL?
 
--- SQL (Structured Query Language) is a language used to store, manage, and retrieve data from a database.
--- n simple words:
--- SQL helps us talk to the database and get the information we need.
+ SQL (Structured Query Language) is a language used to store, manage, and retrieve data from a database.
+ n simple words:
+ SQL helps us talk to the database and get the information we need.
 
--- 📌 What is a Table?
+  What is a Table?
 
--- A table is a structure inside a database used to store data in rows and columns.
+ A table is a structure inside a database used to store data in rows and columns.
 
--- 📱Example: Contact list → Each contact = row, each detail (name, number) = column.
+ Example: Contact list → Each contact = row, each detail (name, number) = column.
 
-Code:
+# Code:
 CREATE DATABASE StudentDB;
 
 USE StudentDB;
@@ -45,7 +45,7 @@ insert into Students ( student_id , name , course, age )Values
  SELECT * FROM Students;
 
 
-Example: Create a Students Table
+ # Example: Create a Students Table
 
 CREATE TABLE Students (  
   id INT PRIMARY KEY,
@@ -54,14 +54,14 @@ CREATE TABLE Students (
   age INT
 );
 
-What is Constraint?
+# What is Constraint?
 A constraint is a rule applied on a table’s data
 to ensure correct, valid, and safe data is stored.
 
 name VARCHAR(50) NOT NULL
 -- NOT NULL constraint ensures that the 'name' column cannot have NULL values.
 
-What is Key Constraint?
+# What is Key Constraint?
 
 -- A key constraint is a type of constraint used to identify or link records in a table.
 
@@ -73,23 +73,18 @@ Unique Key → No duplicate values allowed
 
 -- id INT PRIMARY KEY
 
-Short Summary
+ # Short Summary
 
 -- Constraint = Data rules
 
 -- Key Constraint = Rules for identifying & linking records
 
-
-
-
-
-
--- WHERE Clause
+#  WHERE Clause
 The WHERE clause is used to filter data —
 It shows only those rows that match a condition.
 -- SELECT * FROM Students WHERE age > 20;
 
-📌 Operators in WHERE
+# Operators in WHERE
 
 Used to set conditions.
 
@@ -107,7 +102,7 @@ Used to set conditions.
 | BETWEEN  | Range                 | age BETWEEN 18 AND 25     |
 | IN       | Multiple values       | course IN ('SQL','React') |
 
--- 🔥 Quick Example Queries
+#  Quick Example Queries
 
 SELECT * FROM Students WHERE course = 'SQL';
 
@@ -115,7 +110,7 @@ SELECT * FROM Students WHERE age > 20 AND course='React';
 
 SELECT * FROM Students WHERE name LIKE 'R%';
 
-🎯 Summary
+# Summary
 
 WHERE = Filter data
 
@@ -124,21 +119,21 @@ Operators = Create conditions
 Used in almost every SELECT, UPDATE, DELETE query 🚀
 
 
-📌 ORDER BY
+# ORDER BY
 
 Used to sort the result.
 
 SELECT * FROM Students ORDER BY age ASC; -- Small to big
 SELECT * FROM Students ORDER BY age DESC; -- Big to small
 
-📌LIMIT
+# LIMIT
 
 Used to show limited number of rows.
 
 SELECT * FROM Students LIMIT 2;
 
 
-📌 Aggregate Functions
+#  Aggregate Functions
 Used to perform calculations on a column.
 
 | Function | Meaning              |
@@ -154,7 +149,7 @@ SELECT MAX(age) FROM Students;
 SELECT AVG(age) FROM Students;
 
 
-🎯 Super Short Summary
+# Super Short Summary
 
 ORDER BY → Sort data
 
@@ -163,7 +158,7 @@ LIMIT → Restrict number of rows
 Aggregate Functions → Math on data (count, sum etc.)
 
 
-📌 GROUP BY
+# GROUP BY
 
 Used to group rows having the same values together.
 
@@ -174,11 +169,11 @@ FROM Students
 GROUP BY course;
 
 
-📌 HAVING
+#  HAVING
 
 Used to filter groups (just like WHERE filters rows).
 
-👉 Example: Show only courses having more than 1 student
+# Example: Show only courses having more than 1 student
 
 SELECT course, COUNT(*) 
 FROM Students 
@@ -186,7 +181,7 @@ GROUP BY course
 HAVING COUNT(*) > 1;
 
 
-📌 OR Operator (General)
+# OR Operator (General)
 
 Used when any one condition can be true.
 
@@ -194,7 +189,7 @@ SELECT * FROM Students
 WHERE age = 21 OR course = 'React';
 
 
-🎯 Short Summary
+# Short Summary
 
 GROUP BY → Group similar data
 
@@ -202,10 +197,10 @@ HAVING → Filter groups
 
 OR → Any one condition true
 
-📌 UPDATE :- Used to modify existing data.
+ UPDATE :- Used to modify existing data.
 
 
-📌 DELETE :-
+# DELETE :-
 Used to delete specific rows.
 
 DELETE FROM Students 
@@ -213,7 +208,7 @@ WHERE student_id = 2;
 
 -- Table remains, only selected data removed.
 
-📌 ALTER TABLE
+# ALTER TABLE
 
 -- Used to modify table structure (add/remove columns, change type).
 
@@ -221,7 +216,7 @@ ALTER TABLE Students ADD email VARCHAR(50);
 ALTER TABLE Students DROP COLUMN age;
 
 
-📌 TRUNCATE TABLE
+# TRUNCATE TABLE
 
 Used to delete all rows from table very fast
 (but structure remains)
@@ -229,7 +224,7 @@ Used to delete all rows from table very fast
 TRUNCATE TABLE Students;
 
 
--- 🎯 Super Short Summary
+# Super Short Summary
 
 | Command  | What it does                    |
 | -------- | ------------------------------- |
